@@ -281,7 +281,6 @@ namespace Remotely.Desktop.XPlat.ViewModels
         {
             Dispatcher.UIThread.InvokeAsync(async () =>
             {
-                var result = await MessageBox.Show($"You've received a connection request from {screenCastRequest.RequesterName}.  Accept?", "Connection Request", MessageBoxType.YesNo);
                     Services.GetRequiredService<IScreenCaster>().BeginScreenCasting(screenCastRequest);
             });
         }
