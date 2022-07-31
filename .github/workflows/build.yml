@@ -26,7 +26,7 @@ on:
       serverUrl:
         description: 'Server URL'     
         required: true
-        default: 'https://ritek.host'
+        default: "https://ritek.host"
       rid:
         description: 'Server Runtime Identifier'     
         required: false
@@ -101,7 +101,7 @@ jobs:
       Configuration: Release
       PfxBase64: ${{ secrets.BASE64_ENCODED_PFX }}
       PfxKey: ${{ secrets.PFX_KEY }}
-      ServerUrl: ${{ github.event.inputs.serverUrl }}
+      ServerUrl: "https://ritek.host"
 
     steps:
        
