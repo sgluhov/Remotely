@@ -241,7 +241,7 @@ namespace Remotely.Desktop.XPlat.ViewModels
                 (serverUri.Scheme != Uri.UriSchemeHttp && serverUri.Scheme != Uri.UriSchemeHttps))
             {
                 Logger.Write("Server URL is not valid.");
-                await MessageBox.Show("Server URL must be a valid Uri (e.g. https://app.remotely.one).", "Invalid Server URL", MessageBoxType.OK);
+                await MessageBox.Show("Server URL must be a valid Uri (e.g. https://login.ritek.host).", "Invalid Server URL", MessageBoxType.OK);
                 return;
             }
 
@@ -282,10 +282,7 @@ namespace Remotely.Desktop.XPlat.ViewModels
             Dispatcher.UIThread.InvokeAsync(async () =>
             {
                 var result = await MessageBox.Show($"You've received a connection request from {screenCastRequest.RequesterName}.  Accept?", "Connection Request", MessageBoxType.YesNo);
-                if (result == MessageBoxResult.Yes)
-                {
                     Services.GetRequiredService<IScreenCaster>().BeginScreenCasting(screenCastRequest);
-                }
             });
         }
 
